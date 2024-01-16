@@ -1,3 +1,5 @@
+// DARK MODE JS
+
 ( () => {
 	let theme = 'light';
 
@@ -26,28 +28,33 @@
   toggle.addEventListener('click', () => document.body.classList.toggle('vertical'));
 } )();
 
-// Peel Function
+//   NAVBAR JS
 
-function peel(targetElementId, selfElementId) {
-	const targetElement = document.getElementById(targetElementId);
-	const selfElement = document.getElementById(selfElementId);
-  
-	if (!targetElement) {
-	  console.error("Target element with ID " + targetElementId + " not found.");
-	  return;
-	}
-	if (!selfElement) {
-	  console.error("Self element with ID " + selfElementId + " not found.");
-	  return;
-	}
-  
-	// Peel the target element (toggle its visibility)
-	if (targetElement.classList.contains("hidden")) {
-	  targetElement.classList.remove("hidden");
-	} else {
-	  targetElement.classList.add("hidden");
-	}
-  
-	// Hide the self element
-	selfElement.classList.add("hidden");
-  }
+const openMenu = document.querySelector(".fa-bars");
+const closeMenu = document.querySelector(".fa-xmark");
+const menu = document.querySelector(".main-nav-list");
+function toggleMenu() {
+  menu.classList.toggle("show-menu");
+  openMenu.style.display = menu.classList.contains("show-menu")
+    ? "none"
+    : "block";
+  closeMenu.style.display = menu.classList.contains("show-menu")
+    ? "block"
+    : "none";
+}
+openMenu.addEventListener("click", toggleMenu);
+closeMenu.addEventListener("click", toggleMenu);
+// nav menu color function
+const links = document.querySelectorAll(".main-nav-link");
+function handleLinkClick(e) {
+  links.forEach((link) => {
+    link.classList.remove("active-link");
+  });
+
+  e.target.classList.add("active-link");
+}
+
+links.forEach((link) => {
+  link.addEventListener("click", handleLinkClick);
+});
+

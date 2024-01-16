@@ -3,22 +3,20 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+* { 
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	list-style: none;
+
+
 }
- 
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
-}
-
-ol, ul {
-	list-style: none;
 }
 
 blockquote, q {
@@ -77,6 +75,59 @@ html[data-theme='dark'] {
 	--clr-toggle: #345b6f;
 }
 
+/* =========================================NAVIGATION======================================================= */
+
+.container {
+	max-width: 192rem;
+	width: 90%;
+	margin: 0 auto;
+  }
+  .header {
+	  height: 100vh;
+	  background-color: green;
+  }
+  .logo {
+	width: 5rem;
+	height: 5rem;
+  }
+  .nav-bar{
+	width: 100%;
+	/* position: relative; */
+	height: 7rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+  }
+  
+  .main-nav-list{
+	width: 60rem;
+	display: flex;
+	justify-content: space-between;
+  
+  }
+  .main-nav-link{
+	color: #fff;
+	text-transform:uppercase;
+	font-size:1.5rem;
+	font-weight: 600;
+  }
+  .active-link{
+	color:#355fdb;
+  }
+  .fa-solid{
+	cursor: pointer;
+	font-size:2rem;
+	font-weight: 600;
+	color: #fff;
+	display: none;
+  }
+  
+   .btn-nav{
+	  display: none;
+	}
+	
+
 /* =========================================TYPOGRAPHY======================================================= */
 
 body {
@@ -108,39 +159,9 @@ h2 {
 	font-weight: 700;
 }
 
-.p-button {
-	font-family: var(--ff-handwriting);
-	font-size: 1.2rem;
-	font-weight: 400;
-	color: #505050;
-	margin-inline: auto;
-	width: min(90% - 15rem);
-}
-
-.intro-p {
-	font-size: 1.42rem;
-	padding-top: 2rem;
-}
 ::selection {
 	background-color: #2A4494;
 	color: white;
-}
-ol > h3 {
-	font-size: 1.9rem;
-	font-weight: 600;
-	color: #333333;
-	padding-block: .7rem;
-}
-ol {
-	list-style:decimal;
-	color: #333333;
-	font-size: 1.5rem;
-	padding: 2rem 4rem;
-	border: 1px solid var(--clr-text);
-}
-
-ol :not(h3 *) {
-	margin-left: .3rem;
 }
 
 /* ========================================LINKS STYLING===================================================*/
@@ -156,61 +177,6 @@ a:hover {
 	border-bottom: 5px solid #D81E5B;
 }
 /*=========================================LAYOUT==========================================================*/
-.introduction {
-	display: block;
-	margin-inline: auto;
-	position: relative;
-	z-index: 1;
-	margin-block: 2rem 20rem;
-}
-.flex-container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-  }
-  
-.flex-item {
-	flex-basis: calc(47% - 10px);
-	margin-bottom: 20px;
-	min-width: 250px;
-	padding-top: 15px;
-  }
-.flex-container-icon {
-	display: flex;
-	flex-wrap: wrap;
-}
-.flex-item-icon {
-	flex-basis: calc(27%);
-  }
-  h2.flex-item-icon {
-	flex-basis: calc(70%);
-  }
-  .icon {
-	width: 9rem; 
-  }
-
-ol {
-	background-color: var(--clr-background-accent);
-}
-.hidden {
-	display: none;
-}
-
-ul {
-	margin-top: 25rem;
-}
-ul.flex-container:nth-child(1) {
-	margin-top: 0;
-}
-
-html {
-	scroll-behavior: smooth;
-}
-
-img {
-	display: block;
-	max-width: 100%;
-}
 
 .scroll-tracker {
 	position: absolute;
@@ -327,54 +293,3 @@ footer {
 	transform: rotate(-5deg);
 }
 /* =============================MQs================== */
-
-@media (min-width : 1200px) {
-	main {
-		padding: 10rem;
-	}
-	ol {
-		display: block;
-		width: 17%;
-		position: absolute;
-	    right: 15rem;
-		top: 30rem;
-		z-index: 2;
-}
-   .introduction {
-	width: 50%;
-   }
-   .intro-p {
-	width: 85%;
-
-   }
-}
-
-@media (max-width : 1200px) {
-	.flex-container, .flex-container-icon {
-		flex-direction: column;
-	}
-	.peelers{
-		background-size: 100%;
-		max-width: 130%;
-	}
-	.p-button {
-		font-family: var(--ff-handwriting);
-		font-size: 1rem;
-		font-weight: 400;
-		color: #505050;
-		margin-inline: auto;
-		min-width: 12rem;
-	}
-	.three-things {
-    width: 15rem;
-	}
-	footer > a:nth-child(1) {
-		width: 30px;
-	}
-	.introduction {
-		margin-bottom: 2rem;
-	}
-	h1 {
-		margin-top: 8rem;
-	}
-}
